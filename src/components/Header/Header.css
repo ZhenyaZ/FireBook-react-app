@@ -1,0 +1,19 @@
+.header-content{
+    display: flex;
+    margin-top: 81px;
+    justify-content: space-evenly;
+}
+.header-content__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.header-content__image{
+    display: flex;
+    align-items:end;
+}
+.header-content__image > img{
+    width: 350px;
+    height: 350px;
+    border-radius:350px;
+}

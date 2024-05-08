@@ -1,0 +1,24 @@
+.navbar{
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+hr{
+    color: black;
+}
+.nav-btn{
+    margin-top: 24px;
+}
+.nav-btn > ul{
+    display: flex;
+    justify-content: center;
+}
+.nav-btn > ul,li{
+    padding-left: 67px;
+}
+.nav-btn > ul,li:first-child{
+    padding-left: 0px;
+}
