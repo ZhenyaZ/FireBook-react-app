@@ -1,5 +1,41 @@
-.card{
-    width: 312px;
-    height: 400px;
-    background: rgba(30, 40, 50, 0.05);
+.card {
+  margin-top: 90px;
+  width: 312px;
+  background: rgba(255, 255, 255, 0);
+  margin-bottom: 30px;
+  padding: 8px 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.card-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card-text__authors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-text__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+}
+.card-controllers {
+  display: flex;
+  justify-content: center;
+}
+.card-controllers > button {
+  margin-top: 15px;
+  text-align: center;
+  background: #ffffff;
+  padding: 5px 15px;
+  border: 1px solid gray;
+}
+.card-controllers > button:hover {
+  border: 1px solid rgb(255, 255, 255);
+  background: #000000;
+  color: white;
 }
