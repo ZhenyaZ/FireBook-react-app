@@ -15,7 +15,9 @@ export default function Card(props) {
             <h3>{props.bookdata.title}</h3>
           </div>
           <div className="cart-text__price">
-            <span>FREE</span>
+            <span>
+              {props.bookdata.price === "$0.00" ? "FREE" : props.bookdata.price}
+            </span>
           </div>
         </div>
 

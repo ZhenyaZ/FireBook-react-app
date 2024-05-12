@@ -4,7 +4,7 @@ import header_img from "./books_header.jpg";
 import "./Header.css";
 export default function Header() {
   return (
-    <>
+    <header>
       <Nav />
       <div className="header-content">
         <div className="header-content__text">
@@ -26,6 +26,6 @@ export default function Header() {
           <img src={header_img} alt="header_img" />
         </div>
       </div>
-    </>
+    </header>
   );
 }

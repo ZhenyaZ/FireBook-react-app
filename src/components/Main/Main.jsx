@@ -1,10 +1,10 @@
 import React from "react";
 import Products from "./Products/Products";
 
-function Main() {
+function Main(props) {
   return (
     <main className="main">
-      <Products />
+      <Products bookdata={props.bookdata} />
     </main>
   );
 }

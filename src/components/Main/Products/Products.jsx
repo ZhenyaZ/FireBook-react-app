@@ -1,45 +1,8 @@
 import React from "react";
 import Card from "../../UI/Card/Card";
 import "./Products.css";
-function Products() {
-  const bookdata = [
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-    {
-      authors: "Navin sabrhawal",
-      title: "Practical MongoDB",
-      subtitle: "subtitle",
-      image: "https://itbook.store/img/books/9781484206485.png",
-    },
-  ];
+function Products(props) {
+  const bookdata = props.bookdata.books; //fetched books
 
   return (
     <section className="products">
@@ -47,15 +10,9 @@ function Products() {
         <h1>You may like this</h1>
       </div>
       <div className="products__list-products">
-        {/* <Card bookdata={bookdata} />
-        <Card bookdata={bookdata} />
-        <Card bookdata={bookdata} />
-        <Card bookdata={bookdata} />
-        <Card bookdata={bookdata} />
-        <Card bookdata={bookdata} /> */}
-        {bookdata.map((prod) => (
-          <Card bookdata={prod} />
-        ))}
+        {bookdata != undefined //If bookdata != undefined -> show books. else output in console -> error in parsing books
+          ? bookdata.map((prod) => <Card bookdata={prod} />) 
+          : console.log("error in parsing books")} 
       </div>
     </section>
   );
