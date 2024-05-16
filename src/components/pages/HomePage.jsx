@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import "../../App.css";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
 
 function App() {
   const [bookdata, setBookData] = useState([{}]);
@@ -20,6 +20,7 @@ function App() {
       <div className="content-wrapper">
         <Header />
         <Main bookdata={bookdata} />
+        
       </div>
       <Footer />
     </div>
