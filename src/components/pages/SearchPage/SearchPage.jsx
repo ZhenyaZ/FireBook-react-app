@@ -3,29 +3,30 @@ import { useState } from "react";
 import search_icon from "../../../assets/icons/search.png";
 import Header from "../../../components/Header/Header";
 import "./SearchPage.css";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import SearchContent from "./SearchContent";
 function SearchPage() {
   //Variables
   const [searchInput, setSearchInput] = useState("");
-  const searchData = [{}];
+  const [searchData, setSearchData] = useState();
+  const [isVisible, setIsVisible] = useState(false);
   const urlAPI = `https://api.itbook.store/1.0/search/${searchInput}`; //API url
-  const navigate = useNavigate();
 
   //Functions
-  const searchOnChangeHandler = (val) => {
+  const searchOnChangeHandler = async (val) => {
     //Controlled inputs
     setSearchInput(val.target.value);
-  };
-  const searchButtonHandler = async (e) => {
-    //Search button handler.
-    e.preventDefault();
     const response = await fetch(urlAPI);
-    const data = response.json();
-    searchData.push(data);
-    navigate('/search/result')
-    console.log(data);
+    const data = await response.json();
+    setSearchData([data]);
+  };
+  //Search button handler.
+  const searchButtonHandler = async (e) => {
+    e.preventDefault();
+
+    setIsVisible(true);
   };
   return (
+    <>
     <div className="content-wrapper">
       <Header />
       <div className="search">
@@ -40,18 +41,25 @@ function SearchPage() {
             />
           </li>
           <li id="search__controllers-btn">
-            <Link to={''} onClick={searchButtonHandler}> 
-              <button type="submit" >
-                <img src={search_icon} alt="" />
-              </button>
-            </Link>
+            <button type="submit" onClick={searchButtonHandler}>
+              <img src={search_icon} alt="" />
+            </button>
           </li>
         </div>
         <div className="search__content-result">
-          <Outlet />
+          {isVisible ? (
+            <SearchContent
+              books={searchData[0].books}
+              searchInput={searchInput}
+            />
+          ) : (
+            <h1>Waiting your search</h1>
+          )}
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
 

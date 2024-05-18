@@ -6,7 +6,7 @@ import AboutPage from "./components/pages/AboutPage.jsx";
 import NotFoundPage from "./components/pages/NotFoundPage.jsx";
 import "./index.css";
 import SearchPage from "./components/pages/SearchPage/SearchPage.jsx";
-import SearchContent from "./components/pages/SearchPage/SearchContent.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,13 +23,12 @@ const router = createBrowserRouter([
     path: "/search",
     element: <SearchPage />,
     errorElement: <NotFoundPage />,
-    children: [
-      {
-        path: "/search/result",
-        element: <SearchContent />,
-      },
-    ],
   },
+  {
+    path:'/cart',
+    element: <Cart/>,
+    errorElement: <NotFoundPage/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

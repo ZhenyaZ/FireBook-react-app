@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Products from "./Products/Products";
 
 function Main(props) {
+
   return (
-    <main className="main">
+    <>
+      <main className="main">
       <Products bookdata={props.bookdata} />
     </main>
+    </>
+    
   );
 }
 

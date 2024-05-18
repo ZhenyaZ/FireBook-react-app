@@ -18,11 +18,11 @@
 #search__controllers-btn {
   padding-left: 25px;
 }
-#search__controllers-btn > a > button {
+#search__controllers-btn > button {
   background: transparent;
   border: 0px;
 }
-#search__controllers-btn > a >  button > img {
+#search__controllers-btn >  button > img {
 display: block;
 padding: 5px;
 border: 1px solid black;

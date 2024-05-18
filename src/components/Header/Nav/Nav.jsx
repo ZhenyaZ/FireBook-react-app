@@ -24,7 +24,7 @@ export default function Nav() {
             <Link to="/search">SEARCH</Link>
           </li>
           <li>
-            <Link to="#">CART</Link>
+            <Link to="/cart">CART</Link>
           </li>
         </ul>
       </div>
