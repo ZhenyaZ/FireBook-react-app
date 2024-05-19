@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Card.css";
 export default function Card(props) {
-  
+  const click = () => {
+    props.addBooksHandler(props.bookdata);
+  };
+
   return (
     <div className="card">
       <div className="card-content">
@@ -23,7 +26,7 @@ export default function Card(props) {
         </div>
 
         <div className="card-controllers">
-          <button>Add to cart</button>
+          <button onClick={click}>Add to cart</button>
         </div>
       </div>
     </div>

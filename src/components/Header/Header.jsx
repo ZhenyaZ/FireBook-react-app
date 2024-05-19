@@ -2,10 +2,16 @@ import React from "react";
 import Nav from "./Nav/Nav";
 import header_img from "./books_header.jpg";
 import "./Header.css";
-export default function Header() {
+export default function Header(props) {
   return (
     <header>
-      <Nav />
+      <Nav
+        cartBooksData={props.cartBooksData}
+        searchVisibleHandler={props.searchVisibleHandler}
+        totalAmount={props.totalAmount}
+        setBooksCart={props.setBooksCart}
+        setTotalAmount={props.setTotalAmount}
+      />
       <div className="header-content">
         <div className="header-content__text">
           <div className="header-content__text-label">

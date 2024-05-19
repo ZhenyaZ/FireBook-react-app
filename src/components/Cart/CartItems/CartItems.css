@@ -1,0 +1,27 @@
+.cart-item__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  grid-template-rows: 1fr 0fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". ."
+    ". ."
+    ". .";
+}
+.element {
+  display: flex;
+  width: 600px;
+  padding: 5px;
+  margin-top: 30px;
+  border: 1px solid;
+  border-radius: 25px;
+}
+.cart-totalAmount {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 25px;
+  height: 30px;
+  width: 180px;
+  padding: 10px;
+}

@@ -1,0 +1,45 @@
+.form-input {
+  display: flex;
+  margin-top: 30px;
+  border: 1px solid;
+  padding: 10px;
+}
+
+.lastName {
+  margin-left: 25px;
+}
+.email {
+  margin-left: 25px;
+}
+.tel {
+  margin-left: 25px;
+}
+.name > label {
+  padding-right: 25px;
+}
+.lastName > label {
+  padding-right: 25px;
+}
+.email > label {
+  padding-right: 25px;
+}
+.tel > label {
+  padding-right: 25px;
+}
+.form-controllers {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.form-controllers > button {
+  width: 250px;
+  text-align: center;
+  background: #ffffff;
+  padding: 5px 15px;
+  border: 1px solid gray;
+}
+.form-controllers > button:hover {
+  border: 1px solid rgb(255, 255, 255);
+  background: #000000;
+  color: white;
+}

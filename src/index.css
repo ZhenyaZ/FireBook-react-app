@@ -21,11 +21,12 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.05);
 }
-.content-wrapper{
+.content-wrapper {
   margin-left: 300px;
   margin-right: 300px;
-  padding-top: 31px; 
+  padding-top: 31px;
   background: rgba(30, 40, 50, 0.05);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 31px;
 }

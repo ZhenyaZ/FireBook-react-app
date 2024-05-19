@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import search_icon from "../../../assets/icons/search.png";
-import Header from "../../../components/Header/Header";
 import "./SearchPage.css";
 import SearchContent from "./SearchContent";
-function SearchPage() {
+function SearchPage(props) {
   //Variables
   const [searchInput, setSearchInput] = useState("");
   const [searchData, setSearchData] = useState();
@@ -27,39 +26,38 @@ function SearchPage() {
   };
   return (
     <>
-    <div className="content-wrapper">
-      <Header />
-      <div className="search">
-        <div className="search__controllers">
-          <li>
-            <input
-              type="search"
-              placeholder="Search books"
-              id="search__controllers-input"
-              onChange={searchOnChangeHandler}
-              value={searchInput}
-            />
-          </li>
-          <li id="search__controllers-btn">
-            <button type="submit" onClick={searchButtonHandler}>
-              <img src={search_icon} alt="" />
-            </button>
-          </li>
-        </div>
-        <div className="search__content-result">
-          {isVisible ? (
-            <SearchContent
-              books={searchData[0].books}
-              searchInput={searchInput}
-            />
-          ) : (
-            <h1>Waiting your search</h1>
-          )}
+      <div>
+        <div className="search">
+          <div className="search__controllers">
+            <li>
+              <input
+                type="search"
+                placeholder="Search books"
+                id="search__controllers-input"
+                onChange={searchOnChangeHandler}
+                value={searchInput}
+              />
+            </li>
+            <li id="search__controllers-btn">
+              <button type="submit" onClick={searchButtonHandler}>
+                <img src={search_icon} alt="" />
+              </button>
+            </li>
+          </div>
+          <div className="search__content-result">
+            {isVisible ? (
+              <SearchContent
+                books={searchData[0].books}
+                searchInput={searchInput}
+                addBooksHandler={props.addBooksHandler}
+              />
+            ) : (
+              <h1>Waiting your search</h1>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </>
-    
   );
 }
 

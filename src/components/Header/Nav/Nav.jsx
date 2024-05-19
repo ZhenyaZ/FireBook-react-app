@@ -1,33 +1,49 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./Nav.css";
-export default function Nav() {
+import Cart from "../../Cart/Cart";
+export default function Nav(props) {
+  const [isVisibleCart, setIsVisibleCart] = useState(false);
+
+  const cartVisibleHandler = () => {
+    setIsVisibleCart(!isVisibleCart);
+  };
+
   return (
-    <nav className="navbar">
-      <div className="logo">
+    <>
+      <nav className="navbar">
+        <div className="logo">
+          <span>
+            <a href="#">FIRE BOOKS</a>
+          </span>
+        </div>
         <span>
-          <a href="#">FIRE BOOKS</a>
+          <hr />
         </span>
-      </div>
-      <span>
-        <hr />
-      </span>
-      <div className="nav-btn">
-        <ul>
-          <li>
-            <Link to="/">HOME</Link>
-          </li>
-          <li>
-            <Link to="/about">ABOUT</Link>
-          </li>
-          <li>
-            <Link to="/search">SEARCH</Link>
-          </li>
-          <li>
-            <Link to="/cart">CART</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <div className="nav-btn">
+          <ul>
+            <li>
+              <a onClick={props.searchVisibleHandler}>HOME</a>
+            </li>
+            <li>
+              <a onClick={props.searchVisibleHandler}>SEARCH</a>
+            </li>
+            <li>
+              <a onClick={cartVisibleHandler}>CART</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {isVisibleCart ? (
+        <Cart
+          closeCart={cartVisibleHandler}
+          cartBooksData={props.cartBooksData}
+          totalAmount={props.totalAmount}
+          setBooksCart={props.setBooksCart}
+          setTotalAmount={props.setTotalAmount}
+        />
+      ) : (
+        ""
+      )}
+    </>
   );
 }

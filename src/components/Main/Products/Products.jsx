@@ -3,7 +3,7 @@ import Card from "../../UI/Card/Card";
 import "./Products.css";
 function Products(props) {
   const bookdata = props.bookdata.books; //fetched books
-  
+
   return (
     <section className="products">
       <div className="products__label">
@@ -11,8 +11,10 @@ function Products(props) {
       </div>
       <div className="products__list-products">
         {bookdata != undefined //If bookdata != undefined -> show books. else output in console -> error in parsing books
-          ? bookdata.map((prod) => <Card bookdata={prod} />) 
-          : console.log("error in parsing books")} 
+          ? bookdata.map((prod) => (
+              <Card bookdata={prod} addBooksHandler={props.addBooksHandler} />
+            ))
+          : console.log("error in parsing books")}
       </div>
     </section>
   );
