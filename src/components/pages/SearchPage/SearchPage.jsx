@@ -19,7 +19,7 @@ function SearchPage(props) {
     setSearchData([data]);
   };
   //Search button handler.
-  const searchButtonHandler = async (e) => {
+  const searchButtonHandler = (e) => {
     e.preventDefault();
 
     setIsVisible(true);
